@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import factory from '../ethereum/factory';
 
-class CampaignsIndex extends Component {
-  state = {
-    campaigns: []
-  };
-
+class CampaignIndex extends Component {
   async componentDidMount() {
-    const campaigns = await factory.methods.getDeployedCampaigns().call();
+    const campaign = await factory.methods.getDeployedCampaigns().call();
 
-    this.setState({ campaigns });
+    console.log(campaigns);
   }
 
   render() {
-    return (
-      <ul>
-        <li>{this.state.campaigns[0]}</li>
-      </ul>
-    );
+    return <div>Campaigns Index!</div>;
   }
 }
 
-export default CampaignsIndex;
+export default CampaignIndex;
