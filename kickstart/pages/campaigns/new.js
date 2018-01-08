@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Form, Button, Input, Message } from 'semantic-ui-react';
+import { Form, Input, Message } from 'semantic-ui-react';
 import Layout from '../../components/Layout';
 import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
+import SubmitButton from '../../components/SubmitButton';
 
 class CampaignNew extends Component {
   state = {
@@ -48,9 +49,9 @@ class CampaignNew extends Component {
           </Form.Field>
 
           <Message error header="Oops!" content={this.state.errorMessage} />
-          <Button loading={this.state.loading} primary>
+          <SubmitButton loading={this.state.loading} primary>
             Create!
-          </Button>
+          </SubmitButton>
         </Form>
       </Layout>
     );
