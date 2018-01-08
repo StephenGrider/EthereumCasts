@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "next dev"
+    "dev": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "ganache-cli": "^6.0.3",
     "mocha": "^4.1.0",
     "next": "^4.1.4",
+    "next-routes": "^1.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "semantic-ui-css": "^2.2.12",
