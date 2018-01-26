@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
 const provider = new HDWalletProvider(
-  'call glow acoustic vintage front ring trade assist shuffle mimic volume reject',
+  'game saddle oyster laundry equal loop lunch allow cactus endless hover unfair',
   'https://rinkeby.infura.io/orDImgKRzwNrVCDrAk5Q'
 );
 const web3 = new Web3(provider);
@@ -17,7 +17,6 @@ const deploy = async () => {
     .deploy({ data: bytecode })
     .send({ gas: '1000000', from: accounts[0] });
 
-  console.log(interface);
   console.log('Contract deployed to', result.options.address);
 };
 deploy();
