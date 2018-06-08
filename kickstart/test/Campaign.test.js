@@ -50,16 +50,33 @@ describe('Campaigns', () => {
     assert(isContributor);
   });
 
+  it('restrict people to contribute once', async () => {
+    await campaign.methods.contribute().send({
+      value: '200',
+      from: accounts[1]
+    });
+
+    try {
+      await campaign.methods.contribute().send({
+        value: '200',
+        from: accounts[1]
+      });
+    } catch (e) {
+      return;
+    }
+    assert(false);
+  });
+
   it('requires a minimum contribution', async () => {
     try {
       await campaign.methods.contribute().send({
         value: '5',
         from: accounts[1]
       });
-      assert(false);
-    } catch (err) {
-      assert(err);
+    } catch (e) {
+      return;
     }
+    assert(false);
   });
 
   it('allows a manager to make a payment request', async () => {

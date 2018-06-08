@@ -65,10 +65,10 @@ describe('Lottery Contract', () => {
         from: accounts[0],
         value: 0
       });
-      assert(false);
-    } catch (err) {
-      assert(err);
+    } catch (e) {
+      return;
     }
+    assert(false);
   });
 
   it('only manager can call pickWinner', async () => {
@@ -76,10 +76,10 @@ describe('Lottery Contract', () => {
       await lottery.methods.pickWinner().send({
         from: accounts[1]
       });
-      assert(false);
-    } catch (err) {
-      assert(err);
+    } catch (e) {
+      return;
     }
+    assert(false);
   });
 
   it('sends money to the winner and resets the players array', async () => {
