@@ -56,10 +56,10 @@ describe('Campaigns', () => {
         value: '5',
         from: accounts[1]
       });
-      assert(false);
-    } catch (err) {
-      assert(err);
+    } catch (e) {
+      return;
     }
+    assert(false);
   });
 
   it('allows a manager to make a payment request', async () => {
