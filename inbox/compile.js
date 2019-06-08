@@ -1,8 +1,13 @@
 const path = require('path');
 const fs = require('fs');
 const solc = require('solc');
+const solConfig = require('./sol.config.js');
 
-const inboxPath = path.resolve(__dirname, 'contracts', 'Inbox.sol');
+const inboxPath = path.join(__dirname, 'contracts/Inbox.sol');
 const source = fs.readFileSync(inboxPath, 'utf8');
 
-module.exports = solc.compile(source, 1).contracts[':Inbox'];
+let compiled = solc.compile(solConfig, 1);
+
+console.log(compiled);
+
+module.exports = JSON.parse(compiled).contracts.Inbox;

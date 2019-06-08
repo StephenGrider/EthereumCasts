@@ -1,0 +1,15 @@
+{
+    "language": "Solidity",
+    "sources": {
+      "Inbox.sol": {
+        "content": "source"
+      }
+    },
+    "settings": {
+      "outputSelection": {
+        "*": {
+          "*": ["evm", "bytecode"]
+        }
+      }
+    }
+  }
