@@ -1,8 +1,14 @@
-const path = require('path');
-const fs = require('fs');
+
 const solc = require('solc');
+const solConfig = require('./sol.config.js');
 
-const lotteryPath = path.resolve(__dirname, 'contracts', 'Lottery.sol');
-const source = fs.readFileSync(lotteryPath, 'utf8');
+let compiled = solc.compile(JSON.stringify(solConfig));
+let  Lottery = JSON.parse(compiled).contracts.Lottery.Lottery;
+ 
+// console.log('ABI',JSON.stringify(Lottery.abi)); 
+// console.log('BYTECODE',JSON.stringify(Lottery.evm.bytecode)); 
 
-module.exports = solc.compile(source, 1).contracts[':Lottery'];
+module.exports = {
+    abi: Lottery.abi,
+    bytecode: Lottery.evm.bytecode
+}
