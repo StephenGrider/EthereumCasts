@@ -1,11 +1,8 @@
 {
-  "name": "ethereumcertification",
+  "name": "inbox",
   "version": "1.0.0",
-  "description": "a repository of work to be done for ETH developer certification in Udemy",
+  "description": "a repository with code from the ETH developer certification in Udemy",
   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "test": "mocha"
   },
@@ -13,7 +10,6 @@
     "eth",
     "blockchain"
   ],
-  "author": "Ivan Damyanov",
   "license": "ISC",
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.2.2",
