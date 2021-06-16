@@ -22,7 +22,7 @@ class App extends Component {
 
   onSubmit = async event => {
     event.preventDefault();
-
+    await window.ethereum.enable();
     const accounts = await web3.eth.getAccounts();
 
     this.setState({ message: 'Waiting on transaction success...' });
@@ -36,6 +36,7 @@ class App extends Component {
   };
 
   onClick = async () => {
+    await window.ethereum.enable();
     const accounts = await web3.eth.getAccounts();
 
     this.setState({ message: 'Waiting on transaction success...' });
