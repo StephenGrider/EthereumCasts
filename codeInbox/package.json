@@ -1,0 +1,22 @@
+{
+  "name": "codeinbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "mocha": "^9.0.2",
+    "solc": "^0.8.6",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.4.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "description": ""
+}
