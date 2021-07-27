@@ -21,10 +21,14 @@ module.exports = function requireFromString(code, filename, opts) {
 
 	var paths = Module._nodeModulePaths(path.dirname(filename));
 
-	var m = new Module(filename, module.parent);
+	var parent = module.parent;
+	var m = new Module(filename, parent);
 	m.filename = filename;
 	m.paths = [].concat(opts.prependPaths).concat(paths).concat(opts.appendPaths);
 	m._compile(code, filename);
 
-	return m.exports;
+	var exports = m.exports;
+	parent && parent.children && parent.children.splice(parent.children.indexOf(m), 1);
+
+	return exports;
 };
